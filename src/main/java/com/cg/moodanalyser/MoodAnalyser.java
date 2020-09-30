@@ -5,12 +5,11 @@ public class MoodAnalyser {
 	private String msg;
 
 	public MoodAnalyser() {
-		
 	}
 
-	public String MoodAnalyser(String msg) {
+	public MoodAnalyser(String msg) {
 		this.msg = msg;
-		return analyseMood();
+		analyseMood();
 	}
 
 	public String analyseMood(String msg) {
@@ -19,9 +18,13 @@ public class MoodAnalyser {
 	}
 
 	public String analyseMood() {
-		if (msg.contains("Happy"))
+		try {
+			if (msg.contains("Happy"))
+				return "Happy";
+			else
+				return "Sad";
+		} catch (Exception e) {
 			return "Happy";
-		else
-			return "Sad";
+		}
 	}
 }
